@@ -1,0 +1,18 @@
+{
+  "version": "1.1",
+  "name": "Rock-paper-Scissor",
+  "description": "this is an app which gives the power to the jnct firefox club and gives an identity to the club at much extent.",
+  "launch_path": "/Rps.html",
+  "icons": {
+    "128": "/img/icon-128.png",
+    "512": "/img/icon-512.png"
+  },
+  "developer": {
+    "name": "Piyush Singhal",
+    "url": "http://shaggyway.blogspot.in"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en"
+}

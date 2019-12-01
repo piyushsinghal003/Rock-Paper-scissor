@@ -1,0 +1,224 @@
+<html>
+<head>
+<title>Script</title>
+<style>
+body
+{
+background-image:url(1.png);
+//opacity:0.7;
+width:100%;
+height:100%;
+//background-repeat:no-repeat;
+background-attachment:scroll;
+}
+
+h1
+{
+font-size:40px;
+color:green;
+background-color:black;
+height:60px;
+width:100%;
+text-align:center;
+}
+
+div.game
+{
+background-color:black;
+margin-top:170px;
+
+}
+
+a
+{
+color:green;
+text-decoration:none;
+}
+
+div.rock{
+width:280px;
+height:280px;
+margin-left:40px;
+padding:30px;
+border:2px solid purple;
+float:left;
+}
+div.scissor{
+width:280px;
+height:280px;
+margin-left:40px;
+padding:30px;
+border:2px solid purple;
+float:left;
+}
+div.paper{
+width:280px;
+height:280px;
+margin-left:40px;
+padding:30px;
+border:2px solid purple;
+float:left;
+}
+h2
+{
+text-align:center;
+font-size:30px;
+background-color:black;
+}
+</style>
+<script>
+function event()
+{
+var userchoice,comchoice;
+confirm("Are you ready");
+var image = document.getElementById('img8');
+
+
+if(image.src.match("img8"))
+{
+var userchoice = "rock";
+document.getElementById("demo").innerHTML = "You Choose Rock";
+}
+else
+{
+if(image.src.match("img9"))
+{
+var userchoice = "scissor";
+document.getElementById("demo").innerHTML = "You Choose Scissor";
+}
+else
+{
+var userchoice = "paper";
+document.getElementById("demo").innerHTML = "You Choose Paper";
+}
+}
+
+
+//var userchoice = prompt("choose one:rock,paper,scissor");
+//document.getElementById("demo").innerHTML = "You Choose "+userchoice;
+//document.write("you choose" +" "+userchoice);
+
+var comchoice = Math.random();
+if(comchoice< 0.33)
+{
+ var comchoice = "rock";
+window.alert(" computer choose "+comchoice);
+}
+else{
+if(comchoice>0.33||comchoice<0.67)
+{
+ var comchoice = "paper";
+window.alert("computer choose "+comchoice);
+}
+else{
+var comchoice = "scissor";
+window.alert("computer choose "+comchoice);
+}
+}
+document.getElementById("demo1").innerHTML = "Computer choose "+comchoice;
+//document.write("computer choose" +" "+comchoice);
+
+if(comchoice==="rock")
+{
+if(userchoice==="paper")
+{
+window.alert("congrats, you win");
+document.getElementById("demo2").innerHTML = "Congrats, you Win";
+}
+else{
+if(userchoice==="scissor"){
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+else
+{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+}
+}
+else
+{
+if(comchoice==="paper")
+{
+if(userchoice==="scissor")
+{
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+else
+{
+if(userchoice==="rock")
+{
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+else
+{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+}
+}
+
+
+
+else 
+{
+if(userchoice==="rock"){
+
+window.alert("congrats, you win");
+document.getElementById("demo2").innerHTML = "Congrats, you Win";
+}
+
+else{
+
+if(userchoice==="paper")
+{
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+
+else{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+
+}
+}
+}
+
+}
+</script>
+</head>
+<body>
+
+<div class="game">
+<h1><a href="play.html">Choose your weapon</a></h1>
+</div>
+
+
+<div class="rock">
+<a href="play2.html"><img id="img8" onclick ="event()" src="img8.jpg" width="250" height="250"><h2>Rock</h2>
+</a>
+
+</div>
+
+<div class="scissor">
+<a href="javascript:event()" target="_blank">
+<img id="img9" onclick ="event()" target="_blank" src="img9.jpg"width="250" height="250"><h2>Scissor</h2>
+</a>
+
+</div>
+
+<div class="paper">
+<a href="play2.html" target="_blank"><img id="img10" onclick ="event()" src="img10.jpg"width="250" height="250"><h2>Paper</h2></a>
+</div>
+
+<div>
+<p id="demo" style=" font-size:25px"></p><br>
+<p id="demo1" style="font-size:25px"></p><br>
+</div>
+
+</body>
+</html>

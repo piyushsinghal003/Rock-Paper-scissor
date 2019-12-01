@@ -1,0 +1,234 @@
+<html>
+<head>
+<style>
+a
+{
+color:white;
+font-size:30px;
+Text-Decoration:none;
+background-color:black;
+border:2px solid lightblue;
+}
+body
+{
+background-image:url(./img/1.png);
+background-attachment:fixed;
+}
+div.fight
+{
+width:90px;
+}
+table
+{
+margin-top:100px;
+}
+td
+{
+width:650px;
+text-align:center;
+
+}
+p
+{
+font-size:40px;
+color:#6600cc;
+margin-top:50px;
+
+}
+h1
+{
+font-style:italic;
+font-family:Georgia;
+background-color:black;
+color:#6600cc;
+border-radius:5px;
+}
+div.p1
+{
+
+}
+div.p2
+{
+}
+div.p3
+{
+width:100%;
+height:100px;
+background-color:black;
+margin-bottom:0px;
+border-radius:5px;
+
+}
+td.height1
+{
+height:250px;
+}
+</style>
+
+</head>
+<body>
+<!--
+<form action="javascript:compare()" method="get">
+<input type="submit" value="GO AHEAD">
+</form>
+<input type="button" value="click me" onclick="compare();" >
+-->
+<center>
+<div class="fight">
+<a href="javascript:compare()">Fight</a>
+</div>
+</center>
+
+<table>
+<tr>
+<td>
+<h1>You(player)</h1>
+</td>
+
+<td>
+<h1>Shaggy(Robot)</h1>
+</td>
+</tr>
+
+<tr>
+<td class="height1">
+<p id="demo"></p><br>
+</td>
+
+<td class="height2">
+<p id="demo1"></p><br>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<div class="p3">
+<p id="demo2"></p><br>
+</div>
+</td>
+</tr>
+</table>
+<script>
+function compare()
+{
+var userchoice,comchoice,image;
+confirm("Are you ready");
+
+var userchoice = prompt("choose one:rock,paper,scissor");
+document.getElementById("demo").innerHTML ="You Choose "+userchoice;
+//document.write("you choose" +" "+userchoice);
+/*
+if(userchoice==="rock")
+{
+image.src = "rock.jpg"
+document.getElementById("img1").innerHTML = imgage.src
+}
+else{
+if(userchoice==="paper")
+{
+image.src = "paper.jpg"
+document.getElementById("img1").innerHTML = imgage.src
+}
+else
+{
+image.src = "scissor.jpg"
+document.getElementById("img1").innerHTML = imgage.src
+}
+}
+*/
+
+var comchoice = Math.random();
+if(comchoice< 0.33)
+{
+ var comchoice = "rock";
+window.alert(" computer choose "+comchoice);
+}
+else{
+if(comchoice>0.33||comchoice<0.67)
+{
+ var comchoice = "paper";
+window.alert("computer choose "+comchoice);
+}
+else{
+var comchoice = "scissor";
+window.alert("computer choose "+comchoice);
+}
+}
+document.getElementById("demo1").innerHTML = "Computer choose "+comchoice;
+//document.write("computer choose" +" "+comchoice);
+
+if(comchoice==="rock")
+{
+if(userchoice==="paper")
+{
+window.alert("congrats, you win");
+document.getElementById("demo2").innerHTML = "Congrats, you Win";
+//window.open("page.html,"w", width="300" height="300");
+}
+else{
+if(userchoice==="scissor"){
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+else
+{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+}
+}
+else
+{
+if(comchoice==="paper")
+{
+if(userchoice==="scissor")
+{
+window.alert("congrats,you win");
+document.getElementById("demo2").innerHTML = "congrats,you win";
+}
+else
+{
+if(userchoice==="rock")
+{
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+else
+{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+}
+}
+
+
+
+else 
+{
+if(userchoice==="rock"){
+
+window.alert("congrats, you win");
+document.getElementById("demo2").innerHTML = "Congrats, you Win";
+}
+
+else{
+
+if(userchoice==="paper")
+{
+window.alert("computer win");
+document.getElementById("demo2").innerHTML = "Better luck next time,computer Win";
+}
+
+else{
+window.alert("Result tie");
+document.getElementById("demo2").innerHTML = "Result tie, you both are good";
+}
+
+}
+}
+}
+
+}
+</script>
+</body>
+</html>
